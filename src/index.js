@@ -37,7 +37,7 @@ function renderCountry(country) {
     if(country.length == 1) {
     const markup = countryTpl(country);
     clearList();
-    refs.container.innerHTML = markup;
+    clearContainer(markup);
    }
 }
 
@@ -45,7 +45,7 @@ function renderCountries(country) {
   if(country.length <= 10 && country.length >= 2) {
   const markup = countriesTpl(country);
   clearContainer();
-  refs.listCountry.innerHTML = markup;
+  clearList(markup);
   }
 }
 
@@ -55,9 +55,9 @@ function onError(error) {
   clearList();
 }
 
-function clearContainer() {
-  refs.container.innerHTML = '';
+function clearContainer(payload = "") {
+  refs.container.innerHTML = payload;
 }
-function clearList() {
-  refs.listCountry.innerHTML = '';
+function clearList(payload = "") {
+  refs.listCountry.innerHTML = payload;
 }
